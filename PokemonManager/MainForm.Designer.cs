@@ -28,39 +28,32 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.button1 = new System.Windows.Forms.Button();
+			this.tabPage1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Location = new System.Drawing.Point(83, 77);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(159, 152);
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
 			// 
 			// tabPage2
 			// 
 			this.tabPage2.Location = new System.Drawing.Point(10, 46);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(491, 281);
+			this.tabPage2.Size = new System.Drawing.Size(1128, 586);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.button1);
 			this.tabPage1.Location = new System.Drawing.Point(10, 46);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(491, 281);
+			this.tabPage1.Size = new System.Drawing.Size(1128, 586);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -71,20 +64,30 @@
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Controls.Add(this.tabPage3);
-			this.tabControl1.Location = new System.Drawing.Point(304, 66);
+			this.tabControl1.Location = new System.Drawing.Point(12, 12);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(511, 337);
+			this.tabControl1.Size = new System.Drawing.Size(1148, 642);
 			this.tabControl1.TabIndex = 1;
 			// 
 			// tabPage3
 			// 
 			this.tabPage3.Location = new System.Drawing.Point(10, 46);
 			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(491, 281);
+			this.tabPage3.Size = new System.Drawing.Size(1128, 586);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "tabPage3";
 			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(50, 53);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(248, 220);
+			this.button1.TabIndex = 0;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// MainForm
 			// 
@@ -92,23 +95,21 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1172, 666);
 			this.Controls.Add(this.tabControl1);
-			this.Controls.Add(this.pictureBox1);
 			this.Name = "MainForm";
 			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.Form1_Load);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.tabPage1.ResumeLayout(false);
 			this.tabControl1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.Button button1;
 	}
 }
 

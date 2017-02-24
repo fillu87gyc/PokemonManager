@@ -8,18 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PokemonManager
+namespace MyException
 {
+	
 	public partial class MainForm : Form
 	{
 		public MainForm()
 		{
+			
 			InitializeComponent();
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-
+			var names = new TextAutoComp.ExcelRead.Set();
+			var AutoList = new TextAutoComp.TextSelect(names.Data());
+			textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
+			textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+			textBox1.AutoCompleteCustomSource = AutoList.sAutoList;
+			
 		}
 
 		private void tabPage1_Click(object sender, EventArgs e)
@@ -28,6 +35,11 @@ namespace PokemonManager
 		}
 
 		private void button1_Click(object sender, EventArgs e)
+		{
+			
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
 
 		}

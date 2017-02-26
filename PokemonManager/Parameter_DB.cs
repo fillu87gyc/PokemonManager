@@ -22,8 +22,7 @@
 
 	}
 	/// <summary>
-	/// workbookはExcelファイルを開いた状態で渡すこと
-	/// 
+	/// workbookはExcelファイルを開いた状態で渡すこと 
 	/// </summary>
 	class Pokemon
 	{		
@@ -41,7 +40,7 @@
 		}
 		void GetChangeAble(int form)
 		{
-			for (int i = 9; Workbook.Worksheet(1).Cell(No, i).Value.ToString() == ""; i += 8) ;
+			for (int i = 9; Workbook.Worksheet(1).Cell(No, i).Value.ToString() == ""; i += 8) 
 			{
 				ChangeAble++;
 			}			

@@ -43,5 +43,35 @@ namespace MyException
 		{
 
 		}
+
+		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void radioButton2_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label8_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label17_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+		{
+
+		}
 	}
 }

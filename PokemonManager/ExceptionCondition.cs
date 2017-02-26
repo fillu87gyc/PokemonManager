@@ -19,6 +19,12 @@ namespace MyException
 			Exp = exp;
 			label2.Text = Exp.ToString();
 		}
+		public ExceptionCondition()
+		{
+			InitializeComponent();
+			//Exp = exp;
+			//label2.Text = Exp.ToString();
+		}
 
 		private void label1_Click(object sender, EventArgs e)
 		{

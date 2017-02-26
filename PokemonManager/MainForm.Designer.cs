@@ -378,11 +378,11 @@
 			// 
 			this.comboBox2.FormattingEnabled = true;
 			this.comboBox2.Items.AddRange(new object[] {
-            "いのちのたま",
-            "こだわりスカーフ",
-            "こだわりめがね",
-            "じゃくてんほけん",
-            "とつげきちょっき"});
+	    "いのちのたま",
+	    "こだわりスカーフ",
+	    "こだわりめがね",
+	    "じゃくてんほけん",
+	    "とつげきちょっき"});
 			this.comboBox2.Location = new System.Drawing.Point(74, 691);
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(189, 35);

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PokemonManager
 {
-	class SpeedCheckerTabEventCtrl
+	partial class MainForm
 	{
+
 	}
 }

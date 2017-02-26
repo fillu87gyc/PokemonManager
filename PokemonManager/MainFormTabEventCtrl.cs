@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PokemonManager
 {
-	class MainFormEventCtrl
+	partial class MainForm
 	{
+
 	}
 }

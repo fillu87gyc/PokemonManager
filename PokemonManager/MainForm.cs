@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace MyException
 {
-	
+
 	public partial class MainForm : Form
 	{
 		public MainForm()
 		{
-			
+
 			InitializeComponent();
 		}
 
@@ -27,11 +27,6 @@ namespace MyException
 		private void tabPage1_Click(object sender, EventArgs e)
 		{
 
-		}
-
-		private void button1_Click(object sender, EventArgs e)
-		{
-			
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
@@ -70,6 +65,16 @@ namespace MyException
 		}
 
 		private void textBox1_TextChanged_1(object sender, EventArgs e)
+		{
+
+		}
+
+		private void SavePokemonData_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void SelectButton_Click(object sender, EventArgs e)
 		{
 
 		}

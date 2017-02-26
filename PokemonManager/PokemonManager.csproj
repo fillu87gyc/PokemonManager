@@ -66,9 +66,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainFormTabEventCtrl.cs" />
+    <Compile Include="NewPokemonTabEventCtrl.cs" />
     <Compile Include="Parameter_DB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpeedCheckerTabEventCtrl.cs" />
     <Compile Include="Tab1_autoConp.cs" />
     <EmbeddedResource Include="ExceptionCondition.resx">
       <DependentUpon>ExceptionCondition.cs</DependentUpon>

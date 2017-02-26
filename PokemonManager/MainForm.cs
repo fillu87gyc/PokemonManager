@@ -21,12 +21,7 @@ namespace MyException
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			var names = new TextAutoComp.ExcelRead.Set();
-			var AutoList = new TextAutoComp.TextSelect(names.Data());
-			textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-			textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-			textBox1.AutoCompleteCustomSource = AutoList.sAutoList;
-			
+			Height += 100;
 		}
 
 		private void tabPage1_Click(object sender, EventArgs e)
@@ -70,6 +65,11 @@ namespace MyException
 		}
 
 		private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+		{
+
+		}
+
+		private void textBox1_TextChanged_1(object sender, EventArgs e)
 		{
 
 		}

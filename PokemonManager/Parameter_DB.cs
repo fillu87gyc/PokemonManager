@@ -36,27 +36,24 @@
 			Workbook = workbook;
 			Name = Workbook.Worksheet(1).Cell((FormNum * 8) + 1, Number).Value.ToString();
 			SetParam(FormNum);
-			ChangeAble = 0;
+			ChangeCount = 0;
+			MegaAble = (Workbook.Worksheet(2).Cell(No, 1).Value.ToString() != "");
+			ChangeAble = (Workbook.Worksheet(1).Cell(No, 9).Value.ToString() != "");
 		}
-		void GetChangeAble(int form)
+		Pokemon[] GetChangeAble(int form)
 		{
+			
 			for (int i = 9; Workbook.Worksheet(1).Cell(No, i).Value.ToString() == ""; i += 8) 
 			{
-				ChangeAble++;
-			}			
-			for (int i = 0; i < ChangeAble; i++)
+				ChangeCount++;
+			}
+			Pokemon[] anotherform = new Pokemon[ChangeCount];
+			for (int i = 0; i < ChangeCount; i++)
 			{
 				anotherform[i] = new Pokemon(No, Workbook, i+1);
 				anotherform[i].SetParam(i+1);
 			}
-			MegaAble = (Workbook.Worksheet(2).Cell(No, 1).Value.ToString() == "");
-			if (MegaAble)
-			{
-				for (int i = 0; i < Param.Length; i++)
-				{
-					Param[i] = int.Parse(Workbook.Worksheet(2).Cell(i + 2 , No).Value.ToString());
-				}
-			}
+			return anotherform;
 		}
 		///<summary>こっちは呼ばない フォームによって分ける場合のみ使う</summary>
 		void SetParam(int FormNum)
@@ -69,9 +66,9 @@
 		int No;
 		string Name;
 		int[] Param;
-		int ChangeAble;
+		int ChangeCount;
+		bool ChangeAble;
 		bool MegaAble;
-		Pokemon[] anotherform;
 		ClosedXML.Excel.XLWorkbook Workbook;
 	}
 

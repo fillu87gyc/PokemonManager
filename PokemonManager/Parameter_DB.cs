@@ -13,14 +13,6 @@
 		/// </summary>
 		public const int KETUBAN = Menber + 1;
 	}
-	public class DynamicDataBase
-	{
-
-	}
-	public class UserData
-	{
-
-	}
 	/// <summary>
 	/// workbookはExcelファイルを開いた状態で渡すこと 
 	/// </summary>

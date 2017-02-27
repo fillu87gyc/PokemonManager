@@ -5,49 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TextAutoComp
+namespace Tab1_autoConp
 {
-	class TextSelect
+
+	//ここだけでExcelファイルを開ける。
+	//例外処理をしてないから大変ね
+	using ClosedXML.Excel;
+
+	//ポケモンのキャラの名前を突っ込む配列を投げる
+	class Names
 	{
-		public AutoCompleteStringCollection sAutoList;
-
-		public TextSelect(string[] strs)
+		XLWorkbook Workbook;
+		string[] tmp;
+		public Names()
 		{
-			sAutoList = new AutoCompleteStringCollection();
-			foreach (var item in strs)
+			Workbook = new XLWorkbook("../../../DataBase/NameDB.xlsx");
+			tmp = new string[Parameter_BD.PreSet.Menber];
+			for (int i = 0; i < Parameter_BD.PreSet.Menber; i++)
 			{
-				//名前を全部突っ込む
-				sAutoList.Add(item);
-			}
-
-		}
-	}
-	namespace ExcelRead
-	{
-		//ここだけでExcelファイルを開ける。
-		//例外処理をしてないから大変ね
-		using ClosedXML.Excel;
-
-		//ポケモンのキャラの名前を突っ込む配列を投げる
-		class Set
-		{
-			XLWorkbook Workbook;
-			string[] tmp;
-			public Set()
-			{
-				Workbook = new XLWorkbook("../../../DataBase/NameDB.xlsx");
-				tmp = new string[Parameter_BD.PreSet.Menber];
-				for (int i = 0; i < Parameter_BD.PreSet.Menber; i++)
-				{
-					IXLCell cell = Workbook.Worksheet(1).Cell(1, i);
-					tmp[i] = cell.Value.ToString();
-				}
-			}
-			public string[] Data()
-			{
-				return tmp;
+				IXLCell cell = Workbook.Worksheet(1).Cell(i+1,1);
+				tmp[i] = cell.Value.ToString();
 			}
 		}
+		public string[] Data()
+		{
+			return tmp;
+		}
 	}
-
 }
+

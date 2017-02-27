@@ -1,4 +1,4 @@
-﻿namespace MyException
+﻿namespace PokemonManager
 {
 	partial class MainForm
 	{
@@ -30,6 +30,7 @@
 		{
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.Tokusei = new System.Windows.Forms.Label();
 			this.SelectButton = new System.Windows.Forms.Button();
 			this.Item = new System.Windows.Forms.Label();
 			this.EffortValue = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.Tokusei_Set = new System.Windows.Forms.TextBox();
 			this.SavePokemonData = new System.Windows.Forms.Button();
 			this.InputForm = new System.Windows.Forms.ComboBox();
 			this.label16 = new System.Windows.Forms.Label();
@@ -66,8 +68,8 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.InputName = new System.Windows.Forms.TextBox();
 			this.ShowImg_newForm = new System.Windows.Forms.PictureBox();
-			this.Tokusei_Set = new System.Windows.Forms.TextBox();
-			this.Tokusei = new System.Windows.Forms.Label();
+			this.isEffortValueOK = new System.Windows.Forms.Label();
+			this.Tokusei_const = new System.Windows.Forms.Label();
 			this.tabPage1.SuspendLayout();
 			this.Weapon.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.ShowImg)).BeginInit();
@@ -79,9 +81,9 @@
 			// tabPage2
 			// 
 			this.tabPage2.Location = new System.Drawing.Point(4, 28);
-			this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
 			this.tabPage2.Size = new System.Drawing.Size(962, 537);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "素早さ判定";
@@ -105,19 +107,28 @@
 			this.tabPage1.Controls.Add(this.Use_item);
 			this.tabPage1.Controls.Add(this.label1);
 			this.tabPage1.Location = new System.Drawing.Point(4, 28);
-			this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
 			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
 			this.tabPage1.Size = new System.Drawing.Size(962, 537);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "メインフォーム";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
 			// 
+			// Tokusei
+			// 
+			this.Tokusei.AutoSize = true;
+			this.Tokusei.Location = new System.Drawing.Point(593, 140);
+			this.Tokusei.Name = "Tokusei";
+			this.Tokusei.Size = new System.Drawing.Size(44, 18);
+			this.Tokusei.TabIndex = 15;
+			this.Tokusei.Text = "特性";
+			// 
 			// SelectButton
 			// 
 			this.SelectButton.Location = new System.Drawing.Point(824, 448);
-			this.SelectButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.SelectButton.Margin = new System.Windows.Forms.Padding(2);
 			this.SelectButton.Name = "SelectButton";
 			this.SelectButton.Size = new System.Drawing.Size(114, 74);
 			this.SelectButton.TabIndex = 3;
@@ -162,7 +173,7 @@
 			// 
 			this.notUse_item.AutoSize = true;
 			this.notUse_item.Location = new System.Drawing.Point(169, 475);
-			this.notUse_item.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.notUse_item.Margin = new System.Windows.Forms.Padding(2);
 			this.notUse_item.Name = "notUse_item";
 			this.notUse_item.Size = new System.Drawing.Size(112, 22);
 			this.notUse_item.TabIndex = 10;
@@ -177,9 +188,9 @@
 			this.Weapon.Controls.Add(this.Weapon2);
 			this.Weapon.Controls.Add(this.Weapon1);
 			this.Weapon.Location = new System.Drawing.Point(376, 210);
-			this.Weapon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Weapon.Margin = new System.Windows.Forms.Padding(2);
 			this.Weapon.Name = "Weapon";
-			this.Weapon.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Weapon.Padding = new System.Windows.Forms.Padding(2);
 			this.Weapon.Size = new System.Drawing.Size(394, 225);
 			this.Weapon.TabIndex = 9;
 			this.Weapon.TabStop = false;
@@ -261,7 +272,7 @@
 			// 
 			this.FormSelectInMainFormTab.FormattingEnabled = true;
 			this.FormSelectInMainFormTab.Location = new System.Drawing.Point(593, 69);
-			this.FormSelectInMainFormTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.FormSelectInMainFormTab.Margin = new System.Windows.Forms.Padding(2);
 			this.FormSelectInMainFormTab.Name = "FormSelectInMainFormTab";
 			this.FormSelectInMainFormTab.Size = new System.Drawing.Size(177, 26);
 			this.FormSelectInMainFormTab.TabIndex = 5;
@@ -269,7 +280,7 @@
 			// ShowImg
 			// 
 			this.ShowImg.Location = new System.Drawing.Point(15, 11);
-			this.ShowImg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.ShowImg.Margin = new System.Windows.Forms.Padding(2);
 			this.ShowImg.Name = "ShowImg";
 			this.ShowImg.Size = new System.Drawing.Size(194, 164);
 			this.ShowImg.TabIndex = 4;
@@ -292,7 +303,7 @@
 			// 
 			this.Use_item.AutoSize = true;
 			this.Use_item.Location = new System.Drawing.Point(39, 475);
-			this.Use_item.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Use_item.Margin = new System.Windows.Forms.Padding(2);
 			this.Use_item.Name = "Use_item";
 			this.Use_item.Size = new System.Drawing.Size(98, 22);
 			this.Use_item.TabIndex = 1;
@@ -316,7 +327,7 @@
 			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Location = new System.Drawing.Point(9, 8);
-			this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
 			this.tabControl1.Size = new System.Drawing.Size(970, 569);
@@ -324,6 +335,8 @@
 			// 
 			// tabPage3
 			// 
+			this.tabPage3.Controls.Add(this.Tokusei_const);
+			this.tabPage3.Controls.Add(this.isEffortValueOK);
 			this.tabPage3.Controls.Add(this.Tokusei_Set);
 			this.tabPage3.Controls.Add(this.SavePokemonData);
 			this.tabPage3.Controls.Add(this.InputForm);
@@ -342,17 +355,24 @@
 			this.tabPage3.Controls.Add(this.InputName);
 			this.tabPage3.Controls.Add(this.ShowImg_newForm);
 			this.tabPage3.Location = new System.Drawing.Point(4, 28);
-			this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Size = new System.Drawing.Size(962, 537);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "新規登録";
 			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
+			// Tokusei_Set
+			// 
+			this.Tokusei_Set.Location = new System.Drawing.Point(303, 148);
+			this.Tokusei_Set.Name = "Tokusei_Set";
+			this.Tokusei_Set.Size = new System.Drawing.Size(140, 25);
+			this.Tokusei_Set.TabIndex = 23;
+			// 
 			// SavePokemonData
 			// 
 			this.SavePokemonData.Location = new System.Drawing.Point(779, 436);
-			this.SavePokemonData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.SavePokemonData.Margin = new System.Windows.Forms.Padding(2);
 			this.SavePokemonData.Name = "SavePokemonData";
 			this.SavePokemonData.Size = new System.Drawing.Size(121, 71);
 			this.SavePokemonData.TabIndex = 22;
@@ -364,8 +384,8 @@
 			// 
 			this.InputForm.Enabled = false;
 			this.InputForm.FormattingEnabled = true;
-			this.InputForm.Location = new System.Drawing.Point(681, 83);
-			this.InputForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.InputForm.Location = new System.Drawing.Point(681, 92);
+			this.InputForm.Margin = new System.Windows.Forms.Padding(2);
 			this.InputForm.Name = "InputForm";
 			this.InputForm.Size = new System.Drawing.Size(140, 26);
 			this.InputForm.TabIndex = 21;
@@ -373,7 +393,7 @@
 			// label16
 			// 
 			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(415, 222);
+			this.label16.Location = new System.Drawing.Point(489, 222);
 			this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label16.Name = "label16";
 			this.label16.Size = new System.Drawing.Size(144, 18);
@@ -384,7 +404,7 @@
 			// 
 			this.RealVal_newForm.AutoSize = true;
 			this.RealVal_newForm.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.RealVal_newForm.Location = new System.Drawing.Point(412, 448);
+			this.RealVal_newForm.Location = new System.Drawing.Point(442, 451);
 			this.RealVal_newForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.RealVal_newForm.Name = "RealVal_newForm";
 			this.RealVal_newForm.Size = new System.Drawing.Size(309, 36);
@@ -393,40 +413,42 @@
 			// 
 			// OtherItem_Set
 			// 
-			this.OtherItem_Set.Location = new System.Drawing.Point(246, 461);
-			this.OtherItem_Set.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.OtherItem_Set.Location = new System.Drawing.Point(239, 462);
+			this.OtherItem_Set.Margin = new System.Windows.Forms.Padding(2);
 			this.OtherItem_Set.Name = "OtherItem_Set";
-			this.OtherItem_Set.Size = new System.Drawing.Size(123, 25);
+			this.OtherItem_Set.Size = new System.Drawing.Size(169, 25);
 			this.OtherItem_Set.TabIndex = 18;
 			// 
 			// FamousItemList
 			// 
 			this.FamousItemList.FormattingEnabled = true;
 			this.FamousItemList.Items.AddRange(new object[] {
-            "いのちのたま",
-            "こだわりスカーフ",
-            "こだわりめがね",
-            "じゃくてんほけん",
-            "とつげきちょっき"});
-			this.FamousItemList.Location = new System.Drawing.Point(53, 461);
-			this.FamousItemList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+	    "いのちのたま",
+	    "こだわりスカーフ",
+	    "こだわりめがね",
+	    "じゃくてんほけん",
+	    "とつげきちょっき"});
+			this.FamousItemList.Location = new System.Drawing.Point(14, 461);
+			this.FamousItemList.Margin = new System.Windows.Forms.Padding(2);
 			this.FamousItemList.Name = "FamousItemList";
-			this.FamousItemList.Size = new System.Drawing.Size(170, 26);
+			this.FamousItemList.Size = new System.Drawing.Size(209, 26);
 			this.FamousItemList.TabIndex = 17;
 			// 
 			// EffortValue_Set
 			// 
 			this.EffortValue_Set.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-			this.EffortValue_Set.Location = new System.Drawing.Point(53, 351);
-			this.EffortValue_Set.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.EffortValue_Set.Location = new System.Drawing.Point(14, 351);
+			this.EffortValue_Set.Margin = new System.Windows.Forms.Padding(2);
+			this.EffortValue_Set.Mask = "000-000-000-000-000-000-000";
 			this.EffortValue_Set.Name = "EffortValue_Set";
-			this.EffortValue_Set.Size = new System.Drawing.Size(326, 31);
+			this.EffortValue_Set.Size = new System.Drawing.Size(401, 31);
 			this.EffortValue_Set.TabIndex = 16;
+			this.EffortValue_Set.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.EffortValue_Set_MaskInputRejected);
 			// 
 			// Weapon_Set
 			// 
-			this.Weapon_Set.Location = new System.Drawing.Point(419, 259);
-			this.Weapon_Set.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Weapon_Set.Location = new System.Drawing.Point(492, 260);
+			this.Weapon_Set.Margin = new System.Windows.Forms.Padding(2);
 			this.Weapon_Set.Multiline = true;
 			this.Weapon_Set.Name = "Weapon_Set";
 			this.Weapon_Set.Size = new System.Drawing.Size(293, 122);
@@ -445,7 +467,7 @@
 			// label14
 			// 
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(415, 401);
+			this.label14.Location = new System.Drawing.Point(445, 425);
 			this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(62, 18);
@@ -475,10 +497,11 @@
 			// IndividualValue_Set
 			// 
 			this.IndividualValue_Set.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-			this.IndividualValue_Set.Location = new System.Drawing.Point(53, 253);
-			this.IndividualValue_Set.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.IndividualValue_Set.Location = new System.Drawing.Point(14, 253);
+			this.IndividualValue_Set.Margin = new System.Windows.Forms.Padding(2);
+			this.IndividualValue_Set.Mask = "00-00-00-00-00-00-00";
 			this.IndividualValue_Set.Name = "IndividualValue_Set";
-			this.IndividualValue_Set.Size = new System.Drawing.Size(326, 31);
+			this.IndividualValue_Set.Size = new System.Drawing.Size(401, 31);
 			this.IndividualValue_Set.TabIndex = 8;
 			this.IndividualValue_Set.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
 			// 
@@ -496,36 +519,38 @@
 			// 
 			this.InputName.Font = new System.Drawing.Font("MS UI Gothic", 20F);
 			this.InputName.Location = new System.Drawing.Point(229, 73);
-			this.InputName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.InputName.Margin = new System.Windows.Forms.Padding(2);
 			this.InputName.Name = "InputName";
 			this.InputName.Size = new System.Drawing.Size(428, 47);
 			this.InputName.TabIndex = 6;
-			this.InputName.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+			this.InputName.TextChanged += new System.EventHandler(this.InputNameText_Changed);
 			// 
 			// ShowImg_newForm
 			// 
 			this.ShowImg_newForm.Location = new System.Drawing.Point(14, 10);
-			this.ShowImg_newForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.ShowImg_newForm.Margin = new System.Windows.Forms.Padding(2);
 			this.ShowImg_newForm.Name = "ShowImg_newForm";
 			this.ShowImg_newForm.Size = new System.Drawing.Size(194, 164);
 			this.ShowImg_newForm.TabIndex = 5;
 			this.ShowImg_newForm.TabStop = false;
 			// 
-			// Tokusei_Set
+			// isEffortValueOK
 			// 
-			this.Tokusei_Set.Location = new System.Drawing.Point(681, 148);
-			this.Tokusei_Set.Name = "Tokusei_Set";
-			this.Tokusei_Set.Size = new System.Drawing.Size(140, 25);
-			this.Tokusei_Set.TabIndex = 23;
+			this.isEffortValueOK.AutoSize = true;
+			this.isEffortValueOK.Location = new System.Drawing.Point(337, 321);
+			this.isEffortValueOK.Name = "isEffortValueOK";
+			this.isEffortValueOK.Size = new System.Drawing.Size(32, 18);
+			this.isEffortValueOK.TabIndex = 24;
+			this.isEffortValueOK.Text = "NG";
 			// 
-			// Tokusei
+			// Tokusei_const
 			// 
-			this.Tokusei.AutoSize = true;
-			this.Tokusei.Location = new System.Drawing.Point(593, 140);
-			this.Tokusei.Name = "Tokusei";
-			this.Tokusei.Size = new System.Drawing.Size(44, 18);
-			this.Tokusei.TabIndex = 15;
-			this.Tokusei.Text = "特性";
+			this.Tokusei_const.AutoSize = true;
+			this.Tokusei_const.Location = new System.Drawing.Point(226, 148);
+			this.Tokusei_const.Name = "Tokusei_const";
+			this.Tokusei_const.Size = new System.Drawing.Size(44, 18);
+			this.Tokusei_const.TabIndex = 25;
+			this.Tokusei_const.Text = "特性";
 			// 
 			// MainForm
 			// 
@@ -533,7 +558,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(987, 585);
 			this.Controls.Add(this.tabControl1);
-			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "MainForm";
 			this.Text = "PokemonManeger";
 			this.Load += new System.EventHandler(this.Form1_Load);
@@ -591,6 +616,8 @@
 		private System.Windows.Forms.Button SavePokemonData;
 		private System.Windows.Forms.Label Tokusei;
 		private System.Windows.Forms.TextBox Tokusei_Set;
+		private System.Windows.Forms.Label isEffortValueOK;
+		private System.Windows.Forms.Label Tokusei_const;
 	}
 }
 

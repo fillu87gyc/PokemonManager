@@ -51,6 +51,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.isInputName = new System.Windows.Forms.Label();
 			this.Tokusei_const = new System.Windows.Forms.Label();
 			this.isEffortValueOK = new System.Windows.Forms.Label();
 			this.Tokusei_Set = new System.Windows.Forms.TextBox();
@@ -70,7 +71,6 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.InputName = new System.Windows.Forms.TextBox();
 			this.ShowImg_newForm = new System.Windows.Forms.PictureBox();
-			this.isInputName = new System.Windows.Forms.Label();
 			this.tabPage1.SuspendLayout();
 			this.Weapon.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.ShowImg)).BeginInit();
@@ -336,6 +336,7 @@
 			// 
 			// tabPage3
 			// 
+			this.tabPage3.BackColor = System.Drawing.Color.Transparent;
 			this.tabPage3.Controls.Add(this.isInputName);
 			this.tabPage3.Controls.Add(this.Tokusei_const);
 			this.tabPage3.Controls.Add(this.isEffortValueOK);
@@ -362,7 +363,15 @@
 			this.tabPage3.Size = new System.Drawing.Size(962, 537);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "新規登録";
-			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// isInputName
+			// 
+			this.isInputName.AutoSize = true;
+			this.isInputName.Location = new System.Drawing.Point(411, 43);
+			this.isInputName.Name = "isInputName";
+			this.isInputName.Size = new System.Drawing.Size(159, 18);
+			this.isInputName.TabIndex = 26;
+			this.isInputName.Text = "入力が正しくないです";
 			// 
 			// Tokusei_const
 			// 
@@ -538,31 +547,24 @@
 			// InputName
 			// 
 			this.InputName.Font = new System.Drawing.Font("MS UI Gothic", 20F);
+			this.InputName.ImeMode = System.Windows.Forms.ImeMode.Katakana;
 			this.InputName.Location = new System.Drawing.Point(229, 73);
 			this.InputName.Margin = new System.Windows.Forms.Padding(2);
 			this.InputName.Name = "InputName";
 			this.InputName.Size = new System.Drawing.Size(428, 47);
 			this.InputName.TabIndex = 6;
 			this.InputName.TextChanged += new System.EventHandler(this.InputNameText_Changed);
-			this.InputName.ImeMode = System.Windows.Forms.ImeMode.Katakana;
 			// 
 			// ShowImg_newForm
 			// 
-			this.ShowImg_newForm.Location = new System.Drawing.Point(14, 10);
+			this.ShowImg_newForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.ShowImg_newForm.Location = new System.Drawing.Point(10, 10);
 			this.ShowImg_newForm.Margin = new System.Windows.Forms.Padding(2);
 			this.ShowImg_newForm.Name = "ShowImg_newForm";
-			this.ShowImg_newForm.Size = new System.Drawing.Size(194, 164);
+			this.ShowImg_newForm.Size = new System.Drawing.Size(200, 200);
+			this.ShowImg_newForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.ShowImg_newForm.TabIndex = 5;
 			this.ShowImg_newForm.TabStop = false;
-			// 
-			// isInputName
-			// 
-			this.isInputName.AutoSize = true;
-			this.isInputName.Location = new System.Drawing.Point(411, 43);
-			this.isInputName.Name = "isInputName";
-			this.isInputName.Size = new System.Drawing.Size(159, 18);
-			this.isInputName.TabIndex = 26;
-			this.isInputName.Text = "入力が正しくないです";
 			// 
 			// MainForm
 			// 

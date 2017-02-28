@@ -15,7 +15,7 @@ namespace PokemonManager
 			{
 				///成功時
 				isInputName.Text = "正しい入力です";
-				var temp = String.Format("{0:000}", No);
+				var temp = String.Format("{0:000}", 1+No);
 				ShowImg_newForm.ImageLocation = ("../../../DataBase/pokeimage/" + temp+"_0"+".png");
 				ShowImg_newForm.Show();
 			}

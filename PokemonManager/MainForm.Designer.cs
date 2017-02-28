@@ -92,6 +92,7 @@
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.BackColor = System.Drawing.Color.Transparent;
 			this.tabPage1.Controls.Add(this.Tokusei);
 			this.tabPage1.Controls.Add(this.SelectButton);
 			this.tabPage1.Controls.Add(this.Item);
@@ -114,7 +115,6 @@
 			this.tabPage1.Size = new System.Drawing.Size(962, 537);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "メインフォーム";
-			this.tabPage1.UseVisualStyleBackColor = true;
 			this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
 			// 
 			// Tokusei
@@ -367,11 +367,11 @@
 			// isInputName
 			// 
 			this.isInputName.AutoSize = true;
-			this.isInputName.Location = new System.Drawing.Point(411, 43);
+			this.isInputName.Location = new System.Drawing.Point(445, 43);
 			this.isInputName.Name = "isInputName";
-			this.isInputName.Size = new System.Drawing.Size(159, 18);
+			this.isInputName.Size = new System.Drawing.Size(48, 18);
 			this.isInputName.TabIndex = 26;
-			this.isInputName.Text = "入力が正しくないです";
+			this.isInputName.Text = "False";
 			// 
 			// Tokusei_const
 			// 
@@ -385,11 +385,11 @@
 			// isEffortValueOK
 			// 
 			this.isEffortValueOK.AutoSize = true;
-			this.isEffortValueOK.Location = new System.Drawing.Point(337, 321);
+			this.isEffortValueOK.Location = new System.Drawing.Point(376, 321);
 			this.isEffortValueOK.Name = "isEffortValueOK";
-			this.isEffortValueOK.Size = new System.Drawing.Size(32, 18);
+			this.isEffortValueOK.Size = new System.Drawing.Size(48, 18);
 			this.isEffortValueOK.TabIndex = 24;
-			this.isEffortValueOK.Text = "NG";
+			this.isEffortValueOK.Text = "False";
 			// 
 			// Tokusei_Set
 			// 
@@ -418,6 +418,7 @@
 			this.InputForm.Name = "InputForm";
 			this.InputForm.Size = new System.Drawing.Size(140, 26);
 			this.InputForm.TabIndex = 21;
+			this.InputForm.SelectedIndexChanged += new System.EventHandler(this.InputForm_SelectedIndexChanged);
 			// 
 			// label16
 			// 

@@ -32,6 +32,9 @@ namespace PokemonManager
 				//名前を全部突っ込む
 				sAutoList.Add(item);
 			}
+
+			ShowImg_newForm.ImageLocation = ("../../../DataBase/system/noimage.png");
+			ShowImg_newForm.Show();
 		}
 
 		private void tabPage1_Click(object sender, EventArgs e)
@@ -61,9 +64,7 @@ namespace PokemonManager
 		private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
 		{
 
-		}
-
-		
+		}		
 
 		private void SavePokemonData_Click(object sender, EventArgs e)
 		{
@@ -79,5 +80,7 @@ namespace PokemonManager
 		{
 
 		}
+
+		
 	}
 }

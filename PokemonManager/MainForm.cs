@@ -15,7 +15,7 @@ namespace PokemonManager
 	{
 		public MainForm()
 		{
-
+			Names  = new Tab1_autoConp.Names();
 			InitializeComponent();
 		}
 
@@ -25,8 +25,8 @@ namespace PokemonManager
 			InputName.AutoCompleteMode = AutoCompleteMode.Suggest;
 			InputName.AutoCompleteSource = AutoCompleteSource.CustomSource;
 			InputName.AutoCompleteCustomSource = sAutoList;
-			var names = new Tab1_autoConp.Names();
-			var strs = names.Data();
+			
+			var strs = Names.Data();
 			foreach (var item in strs)
 			{
 				//名前を全部突っ込む

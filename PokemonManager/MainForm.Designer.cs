@@ -51,6 +51,8 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.Tokusei_const = new System.Windows.Forms.Label();
+			this.isEffortValueOK = new System.Windows.Forms.Label();
 			this.Tokusei_Set = new System.Windows.Forms.TextBox();
 			this.SavePokemonData = new System.Windows.Forms.Button();
 			this.InputForm = new System.Windows.Forms.ComboBox();
@@ -68,8 +70,7 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.InputName = new System.Windows.Forms.TextBox();
 			this.ShowImg_newForm = new System.Windows.Forms.PictureBox();
-			this.isEffortValueOK = new System.Windows.Forms.Label();
-			this.Tokusei_const = new System.Windows.Forms.Label();
+			this.isInputName = new System.Windows.Forms.Label();
 			this.tabPage1.SuspendLayout();
 			this.Weapon.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.ShowImg)).BeginInit();
@@ -335,6 +336,7 @@
 			// 
 			// tabPage3
 			// 
+			this.tabPage3.Controls.Add(this.isInputName);
 			this.tabPage3.Controls.Add(this.Tokusei_const);
 			this.tabPage3.Controls.Add(this.isEffortValueOK);
 			this.tabPage3.Controls.Add(this.Tokusei_Set);
@@ -362,6 +364,24 @@
 			this.tabPage3.Text = "新規登録";
 			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
+			// Tokusei_const
+			// 
+			this.Tokusei_const.AutoSize = true;
+			this.Tokusei_const.Location = new System.Drawing.Point(226, 148);
+			this.Tokusei_const.Name = "Tokusei_const";
+			this.Tokusei_const.Size = new System.Drawing.Size(44, 18);
+			this.Tokusei_const.TabIndex = 25;
+			this.Tokusei_const.Text = "特性";
+			// 
+			// isEffortValueOK
+			// 
+			this.isEffortValueOK.AutoSize = true;
+			this.isEffortValueOK.Location = new System.Drawing.Point(337, 321);
+			this.isEffortValueOK.Name = "isEffortValueOK";
+			this.isEffortValueOK.Size = new System.Drawing.Size(32, 18);
+			this.isEffortValueOK.TabIndex = 24;
+			this.isEffortValueOK.Text = "NG";
+			// 
 			// Tokusei_Set
 			// 
 			this.Tokusei_Set.Location = new System.Drawing.Point(303, 148);
@@ -371,7 +391,7 @@
 			// 
 			// SavePokemonData
 			// 
-			this.SavePokemonData.Location = new System.Drawing.Point(779, 436);
+			this.SavePokemonData.Location = new System.Drawing.Point(822, 439);
 			this.SavePokemonData.Margin = new System.Windows.Forms.Padding(2);
 			this.SavePokemonData.Name = "SavePokemonData";
 			this.SavePokemonData.Size = new System.Drawing.Size(121, 71);
@@ -423,11 +443,11 @@
 			// 
 			this.FamousItemList.FormattingEnabled = true;
 			this.FamousItemList.Items.AddRange(new object[] {
-	    "いのちのたま",
-	    "こだわりスカーフ",
-	    "こだわりめがね",
-	    "じゃくてんほけん",
-	    "とつげきちょっき"});
+            "いのちのたま",
+            "こだわりスカーフ",
+            "こだわりめがね",
+            "じゃくてんほけん",
+            "とつげきちょっき"});
 			this.FamousItemList.Location = new System.Drawing.Point(14, 461);
 			this.FamousItemList.Margin = new System.Windows.Forms.Padding(2);
 			this.FamousItemList.Name = "FamousItemList";
@@ -524,6 +544,7 @@
 			this.InputName.Size = new System.Drawing.Size(428, 47);
 			this.InputName.TabIndex = 6;
 			this.InputName.TextChanged += new System.EventHandler(this.InputNameText_Changed);
+			this.InputName.ImeMode = System.Windows.Forms.ImeMode.Katakana;
 			// 
 			// ShowImg_newForm
 			// 
@@ -534,23 +555,14 @@
 			this.ShowImg_newForm.TabIndex = 5;
 			this.ShowImg_newForm.TabStop = false;
 			// 
-			// isEffortValueOK
+			// isInputName
 			// 
-			this.isEffortValueOK.AutoSize = true;
-			this.isEffortValueOK.Location = new System.Drawing.Point(337, 321);
-			this.isEffortValueOK.Name = "isEffortValueOK";
-			this.isEffortValueOK.Size = new System.Drawing.Size(32, 18);
-			this.isEffortValueOK.TabIndex = 24;
-			this.isEffortValueOK.Text = "NG";
-			// 
-			// Tokusei_const
-			// 
-			this.Tokusei_const.AutoSize = true;
-			this.Tokusei_const.Location = new System.Drawing.Point(226, 148);
-			this.Tokusei_const.Name = "Tokusei_const";
-			this.Tokusei_const.Size = new System.Drawing.Size(44, 18);
-			this.Tokusei_const.TabIndex = 25;
-			this.Tokusei_const.Text = "特性";
+			this.isInputName.AutoSize = true;
+			this.isInputName.Location = new System.Drawing.Point(411, 43);
+			this.isInputName.Name = "isInputName";
+			this.isInputName.Size = new System.Drawing.Size(159, 18);
+			this.isInputName.TabIndex = 26;
+			this.isInputName.Text = "入力が正しくないです";
 			// 
 			// MainForm
 			// 
@@ -618,6 +630,8 @@
 		private System.Windows.Forms.TextBox Tokusei_Set;
 		private System.Windows.Forms.Label isEffortValueOK;
 		private System.Windows.Forms.Label Tokusei_const;
+		private System.Windows.Forms.Label isInputName;
+		Tab1_autoConp.Names Names;
 	}
 }
 

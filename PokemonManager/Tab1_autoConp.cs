@@ -7,9 +7,6 @@ using System.Windows.Forms;
 
 namespace Tab1_autoConp
 {
-
-	//ここだけでExcelファイルを開ける。
-	//例外処理をしてないから大変ね
 	using ClosedXML.Excel;
 
 	//ポケモンのキャラの名前を突っ込む配列を投げる

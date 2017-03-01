@@ -15,26 +15,43 @@ namespace PokemonManager
 	{
 		public MainForm()
 		{
-			Names  = new Tab1_autoConp.Names();
+			Names	= new Tab1_autoConp.Names();
+			Items	= new Parameter_BD.ItemDB.Item();
+			ch	= new Parameter_BD.Character();
 			InitializeComponent();
+		}
+		private void AutoCompleteSet(TextBox obj, string[] strs)
+		{
+			var sAutoList = new AutoCompleteStringCollection();
+			obj.AutoCompleteMode = AutoCompleteMode.Suggest;
+			obj.AutoCompleteSource = AutoCompleteSource.CustomSource;
+			obj.AutoCompleteCustomSource = sAutoList;
+
+			foreach (var item in strs)
+			{
+				sAutoList.Add(item);
+			}
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			AutoCompleteStringCollection sAutoList = new AutoCompleteStringCollection();
-			InputName.AutoCompleteMode = AutoCompleteMode.Suggest;
-			InputName.AutoCompleteSource = AutoCompleteSource.CustomSource;
-			InputName.AutoCompleteCustomSource = sAutoList;
-			
-			var strs = Names.Data();
-			foreach (var item in strs)
-			{
-				//名前を全部突っ込む
-				sAutoList.Add(item);
-			}
+			AutoCompleteSet(InputName, Names.Data());
+			AutoCompleteSet(OtherItem_Set, Items.GetList());
 
-			ShowImg_newForm.ImageLocation = ("../../../DataBase/system/noimage.png");
+			ShowImg_newForm.ImageLocation = (Parameter_BD.PreSet.DBLocation + "system/noimage.png");
 			ShowImg_newForm.Show();
+
+			isDialogue(false);
+			var temp = new string[5]
+			{       "いのちのたま",
+				"こだわりスカーフ",
+				"こだわりめがね",
+				"じゃくてんほけん",
+				"とつげきちょっき"};
+			foreach (var item in temp)
+			{
+				SelectItemList.Items.Add(item);
+			}
 		}
 
 		private void tabPage1_Click(object sender, EventArgs e)
@@ -61,26 +78,23 @@ namespace PokemonManager
 
 		}
 
-		private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-		{
 
-		}		
 
-		private void SavePokemonData_Click(object sender, EventArgs e)
-		{
+		private void SelectButton_Click(object sender, EventArgs e) { }
 
-		}
-
-		private void SelectButton_Click(object sender, EventArgs e)
+		private void Weapon_Set_TextChanged(object sender, EventArgs e)
 		{
 
 		}
 
-		private void EffortValue_Set_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+		private void Tokusei_Set_TextChanged(object sender, EventArgs e)
 		{
 
 		}
 
-		
+		private void label18_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://twitter.com/fill_u87gyc");
+		}
 	}
 }

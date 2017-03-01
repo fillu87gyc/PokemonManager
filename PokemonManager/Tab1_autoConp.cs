@@ -16,7 +16,7 @@ namespace Tab1_autoConp
 		string[] tmp;
 		public Names()
 		{
-			Workbook = new XLWorkbook("../../../DataBase/NameDB.xlsx");
+			Workbook = new XLWorkbook(Parameter_BD.PreSet.DBLocation+"NameDB.xlsx");
 			tmp = new string[Parameter_BD.PreSet.Menber];
 			for (int i = 0; i < Parameter_BD.PreSet.Menber; i++)
 			{

@@ -14,35 +14,12 @@
 		public const int KETUBAN = Menber + 1;
 
 		public const int Item = 115;
+
+		public const string DBLocation = "../../../DataBase/";
+
+		public const int CharNum = 25;
 	}
 
-	public class SetPokemonTemp : Pokemon
-	{
-		SetPokemonTemp(int Number, ClosedXML.Excel.XLWorkbook workbook, int FormNum) : base(Number, workbook, FormNum)
-		{
-			
-
-		}
-		int[] EffortValue	= new int[6];
-		int[] IndividualValue	= new int[6];		
-		int[] Statistics	= new int[6];
-		string[] Weapon		= new string[4];
-		string item		= "";
-	}
-	public class Item
-	{
-		public Item()
-		{
-
-		}
-		
-		public bool Effect(ref int[] st)
-		{
-			
-		}
-		string usrItem = "";
-		double[] itemEffect = new double[6] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
-	}
 	/// <summary>
 	/// workbookはExcelファイルを開いた状態で渡すこと 
 	/// </summary>
@@ -51,21 +28,22 @@
 		/// <param name="Number"></param>
 		/// <param name="Workbook"></param>
 		/// <param name="FormNum">何段階目かを書く 0が通常状態</param>
-		public Pokemon(int Number, ClosedXML.Excel.XLWorkbook workbook, int FormNum)
-		{
+		public Pokemon(int Number, int FormNum)
+		{			
 			Param = new int[6] { 0, 0, 0, 0, 0, 0 };
 			No = Number;
-			Workbook = workbook;
-			Name = Workbook.Worksheet(1).Cell((FormNum * 8) + 1, Number).Value.ToString();
+			Workbook = new ClosedXML.Excel.XLWorkbook(PreSet.DBLocation+"NameDB.xlsx");
+			Name = Workbook.Worksheet(1).Cell(No, (FormNum * 8) + 1).Value.ToString();
 			SetParam(FormNum);
 			ChangeCount = 0;
 			MegaAble = (Workbook.Worksheet(2).Cell(No, 1).Value.ToString() != "");
 			ChangeAble = (Workbook.Worksheet(1).Cell(No, 9).Value.ToString() != "");
+		
 		}
-		void GetChangeData()
+		public void GetChangeData()
 		{
 			
-			for (int i = 9; Workbook.Worksheet(1).Cell(No, i).Value.ToString() == ""; i += 8)
+			for (int i = 9; Workbook.Worksheet(1).Cell(No, i).Value.ToString() != ""; i += 8)
 			{
 				ChangeCount++;
 			}
@@ -77,7 +55,7 @@
 			anotherform = new Pokemon[ChangeCount];
 			for (int i = 0; i < ChangeCount; i++)
 			{
-				anotherform[i] = new Pokemon(No, Workbook, i + 1);
+				anotherform[i] = new Pokemon(No, i + 1);
 			}			
 		}
 		void SetParam(int FormNum)
@@ -95,7 +73,58 @@
 		public int ChangeCount;
 		public bool ChangeAble;
 		public bool MegaAble;
-		ClosedXML.Excel.XLWorkbook Workbook;
+		protected ClosedXML.Excel.XLWorkbook Workbook;
 	}
+	
+}
+namespace Parameter_BD.TempData
+{
+	public class SetPokemonTemp : Pokemon
+	{
+		/// <summary>
+		/// ここに作成中画面のデータを保存
+		/// </summary>
+		/// <param name="Number"></param>
+		/// <param name="FormNum"></param>
+		public SetPokemonTemp(int Number, int FormNum) : base(Number, FormNum)
+		{
 
+		}
+		public bool Set(int[] eff, int[] ind)
+		{
+			int sum = 0;
+			foreach (var item in eff)
+			{
+				if ((item > 255) || (item < 0)) return false;
+				sum += item;
+			}
+			foreach (var item in ind)
+			{
+				if ((item > 31) || (item < 0)) return false;
+			}
+			if (sum > 510) return false;
+			IndividualValue = ind;
+			EffortValue = eff;
+			calc();
+			return true;
+		}
+		void calc()
+		{
+			//Hを計算
+			//(種族値+個体値/2+努力値/8)+60
+			
+			//H以外を計算
+			//{(種族値+個体値/2+努力値/8)+5}×性格補正
+			for (int i = 0; i < 6; i++)
+			{				
+				Statistics[i] = (int)(Param[i] +(IndividualValue[i] / 2.0) + (EffortValue[i] / 8.0)) + 5;
+			}
+			//60 = 5 + 55
+			Statistics[0] += 55; 
+		}
+		public int[] EffortValue = new int[6];
+		public int[] IndividualValue = new int[6];
+		public int[] Statistics = new int[6];
+		public string Character = "まじめ";
+	}
 }

@@ -5,6 +5,7 @@ namespace Parameter_BD.ItemDB
 {
 	using ClosedXML.Excel;
 
+	[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
 	public class Item
 	{
 		public Item()

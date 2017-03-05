@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Parameter_BD
 {
 	using ClosedXML.Excel;
+	[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
 	public class Character
 	{
 		public Character()

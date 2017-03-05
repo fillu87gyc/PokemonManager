@@ -23,6 +23,7 @@
 	/// <summary>
 	/// workbookはExcelファイルを開いた状態で渡すこと 
 	/// </summary>
+	[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
 	public class Pokemon
 	{
 		/// <param name="Number"></param>

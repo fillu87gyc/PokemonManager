@@ -906,4 +906,3 @@
 		private System.Windows.Forms.GroupBox groupBox3;
 	}
 }
-

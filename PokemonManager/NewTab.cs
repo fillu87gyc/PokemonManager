@@ -49,8 +49,6 @@ namespace PokemonManager
 				ShowImg_newForm.ImageLocation = (Parameter_BD.PreSet.DBLocation + "system/noimage.png");
 			}
 			ShowImg_newForm.Show();
-			isInputName.Text = (No > 0).ToString();
-
 		}
 		private void No2Name_Tick(object sender, EventArgs e)
 		{

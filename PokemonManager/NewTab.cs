@@ -21,7 +21,7 @@ namespace PokemonManager
 			{
 				No = Array.IndexOf(Names.Data(), InputName.Text) + 1;
 			}
-				
+
 			if (No > Parameter_BD.PreSet.Menber)
 				No = Parameter_BD.PreSet.Menber;
 
@@ -40,7 +40,9 @@ namespace PokemonManager
 						InputForm.Items.Add(item.Name);
 					}
 				}
+				InputForm.Enabled = (TempPokemon.ChangeAble);
 				No2Name.Enabled = true;
+				SelectItemList.SelectedIndex = 0;
 				Refresh();
 			}
 			else
@@ -79,7 +81,6 @@ namespace PokemonManager
 			InputForm.Items.Add("N/A");
 			SelectItemList.Refresh();
 			InputForm.Refresh();
-
 			Tokusei_Set.Enabled = isAble;
 			InputForm.Enabled = isAble;
 			Weapon_Set.Enabled = isAble;
@@ -147,15 +148,13 @@ namespace PokemonManager
 			{
 				Refresh();
 			}
-
 		}
 		private void SelectItemList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			OtherItem_Set.Enabled = (SelectItemList.SelectedIndex == 0);
+			OtherItem_Set.Enabled = (SelectItemList.Text == "なし");
 			Items.ItemSet(SelectItemList.Text);
 			Refresh();
 		}
-
 		private void OtherItem_Set_TextChanged(object sender, EventArgs e)
 		{
 			SelectItemList.Enabled = (OtherItem_Set.Text == "");
@@ -168,17 +167,12 @@ namespace PokemonManager
 			ch.Set(SeikakuList.Text);
 			Refresh();
 		}
-
-
 		private void SavePokemonData_Click(object sender, EventArgs e)
-		{			
+		{
 
 			var book = new ClosedXML.Excel.XLWorkbook(Parameter_BD.PreSet.DBLocation + "SaveData.xlsx");
 			int next = 1;
-			while (book.Worksheet(1).Cell(next, 1).Value.ToString() != "")
-			{
-				next++;
-			}
+			while (book.Worksheet(1).Cell(next, 1).Value.ToString() != "") next++;
 			SaveSequence(book.Worksheet(1), next);
 			book.Save();
 			isDialogue(false);
@@ -204,5 +198,4 @@ namespace PokemonManager
 			}
 		}
 	}
-
 }

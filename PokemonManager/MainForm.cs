@@ -42,16 +42,20 @@ namespace PokemonManager
 			ShowImg_newForm.Show();
 
 			isDialogue(false);
-			var temp = new string[5]
-			{       "いのちのたま",
+			var temp = new string[6]
+			{	"なし",
+				"いのちのたま",
 				"こだわりスカーフ",
 				"こだわりめがね",
 				"じゃくてんほけん",
-				"とつげきちょっき"};
+				"とつげきちょっき"				
+			};
 			foreach (var item in temp)
 			{
 				SelectItemList.Items.Add(item);
 			}
+			//SelectItemList.SelectedIndex = 0;
+			Height += 50;
 		}
 
 		private void tabPage1_Click(object sender, EventArgs e)
@@ -77,10 +81,10 @@ namespace PokemonManager
 		{
 
 		}
+		private void SelectButton_Click(object sender, EventArgs e)
+		{
 
-
-
-		private void SelectButton_Click(object sender, EventArgs e) { }
+		}
 
 		private void Weapon_Set_TextChanged(object sender, EventArgs e)
 		{

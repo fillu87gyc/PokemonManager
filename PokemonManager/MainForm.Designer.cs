@@ -327,7 +327,7 @@
 			// 
 			// ShowImg
 			// 
-			this.ShowImg.Location = new System.Drawing.Point(17, 13);
+			this.ShowImg.Location = new System.Drawing.Point(17, 15);
 			this.ShowImg.Margin = new System.Windows.Forms.Padding(2);
 			this.ShowImg.Name = "ShowImg";
 			this.ShowImg.Size = new System.Drawing.Size(213, 191);
@@ -428,31 +428,31 @@
 			this.SeikakuList.FormattingEnabled = true;
 			this.SeikakuList.ItemHeight = 21;
 			this.SeikakuList.Items.AddRange(new object[] {
-            "さみしがり",
-            "いじっぱり",
-            "やんちゃ",
-            "ゆうかん",
-            "ずぶとい",
-            "わんぱく",
-            "のうてんき",
-            "のんき",
-            "ひかえめ",
-            "おっとり",
-            "うっかりや",
-            "れいせい",
-            "おだやか",
-            "おとなしい",
-            "しんちょう",
-            "なまいき",
-            "おくびょう",
-            "せっかち",
-            "ようき",
-            "むじゃき",
-            "がんばりや",
-            "きまぐれ",
-            "すなお",
-            "てれや",
-            "まじめ"});
+	    "さみしがり",
+	    "いじっぱり",
+	    "やんちゃ",
+	    "ゆうかん",
+	    "ずぶとい",
+	    "わんぱく",
+	    "のうてんき",
+	    "のんき",
+	    "ひかえめ",
+	    "おっとり",
+	    "うっかりや",
+	    "れいせい",
+	    "おだやか",
+	    "おとなしい",
+	    "しんちょう",
+	    "なまいき",
+	    "おくびょう",
+	    "せっかち",
+	    "ようき",
+	    "むじゃき",
+	    "がんばりや",
+	    "きまぐれ",
+	    "すなお",
+	    "てれや",
+	    "まじめ"});
 			this.SeikakuList.Location = new System.Drawing.Point(751, 12);
 			this.SeikakuList.Name = "SeikakuList";
 			this.SeikakuList.Size = new System.Drawing.Size(115, 298);
@@ -725,13 +725,15 @@
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(336, 28);
+			this.pictureBox1.Location = new System.Drawing.Point(541, 27);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(121, 128);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 9;
 			this.pictureBox1.TabStop = false;
+			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
 			// 
 			// label17
 			// 
@@ -745,9 +747,10 @@
 			// label18
 			// 
 			this.label18.AutoSize = true;
+			this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.label18.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
-			this.label18.Location = new System.Drawing.Point(226, 50);
+			this.label18.Location = new System.Drawing.Point(416, 108);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(110, 26);
 			this.label18.TabIndex = 8;
@@ -787,7 +790,7 @@
 			this.groupBox3.Controls.Add(this.label6);
 			this.groupBox3.Location = new System.Drawing.Point(15, 423);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(901, 189);
+			this.groupBox3.Size = new System.Drawing.Size(942, 189);
 			this.groupBox3.TabIndex = 10;
 			this.groupBox3.TabStop = false;
 			// 
@@ -883,7 +886,7 @@
 		private System.Windows.Forms.Label Tokusei_const;
 		private Tab1_autoConp.Names Names;
 		private Parameter_BD.ItemDB.Item Items;
-		private Parameter_BD.TempData.SetPokemonTemp TempPokemon;
+		private Parameter_BD.Derivation.TempPokemon TempPokemon;
 		private Parameter_BD.Character ch;
 		private System.Windows.Forms.ListBox SeikakuList;
 		private System.Windows.Forms.CheckBox MegaSwitch;
@@ -905,5 +908,6 @@
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.Label label19;
 		private System.Windows.Forms.GroupBox groupBox3;
+		SelectForm selectform = new SelectForm();
 	}
 }

@@ -28,7 +28,7 @@ namespace PokemonManager
 
 			if (No > 0)
 			{
-				TempPokemon = new Parameter_BD.TempData.SetPokemonTemp(No, 0);
+				TempPokemon = new Parameter_BD.Derivation.TempPokemon(No, 0);
 				isDialogue(true);
 				ShowImg_newForm.ImageLocation = (Parameter_BD.PreSet.DBLocation + "pokeimage/" + String.Format("{0:000}", No) + "_0" + ".png");
 				TempPokemon.GetChangeData();
@@ -115,8 +115,6 @@ namespace PokemonManager
 					return;
 				}
 			}
-
-
 			if (TempPokemon.Set(EffortValues, IndividualValues))
 			{
 				ch.Effect(ref TempPokemon.Statistics);
@@ -169,12 +167,17 @@ namespace PokemonManager
 		}
 		private void SavePokemonData_Click(object sender, EventArgs e)
 		{
-
+			TempPokemon.Character = SeikakuList.Text;
+			TempPokemon.Ability = Tokusei_Set.Text;
+			TempPokemon.Item = Items.usrItem;
+			TempPokemon.Weapon = Weapon_Set.Text.Split('\n');
 			var book = new ClosedXML.Excel.XLWorkbook(Parameter_BD.PreSet.DBLocation + "SaveData.xlsx");
 			int next = 1;
 			while (book.Worksheet(1).Cell(next, 1).Value.ToString() != "") next++;
 			SaveSequence(book.Worksheet(1), next);
 			book.Save();
+
+			//Init
 			isDialogue(false);
 			isDialogue(true);
 			InputName.Text = "";
@@ -183,12 +186,12 @@ namespace PokemonManager
 		{
 			sheet.Cell(row, 1).Value = TempPokemon.No;
 			sheet.Cell(row, 2).Value = TempPokemon.Name;
-			sheet.Cell(row, 3).Value = SeikakuList.Text;
-			sheet.Cell(row, 4).Value = Items.usrItem;
-			sheet.Cell(row, 5).Value = Tokusei_Set.Text;
+			sheet.Cell(row, 3).Value = TempPokemon.Character;
+			sheet.Cell(row, 4).Value = TempPokemon.Item;
+			sheet.Cell(row, 5).Value = TempPokemon.Ability;
 			for (int i = 0; i < 4; i++)
 			{
-				sheet.Cell(row, i + 6).Value = Weapon_Set.Text.Split('\n')[i];
+				sheet.Cell(row, i + 6).Value = TempPokemon.Weapon[i];
 			}
 			for (int i = 0; i < 6; i++)
 			{

@@ -17,9 +17,50 @@ namespace PokemonManager
 		{
 			Names = new Tab1_autoConp.Names();
 			Items = new Parameter_BD.ItemDB.Item();
-			ch = new Parameter_BD.Character();
+			ch = new Parameter_BD.Character();			
+			
 			InitializeComponent();
+
 		}
+
+		private void Selectform_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			var Pokemon = new Parameter_BD.Derivation.CompletionPokemon(selectform.SelectRow + 1);
+
+			selectform.Dispose();
+			selectform = null;
+			
+			ShowImg.ImageLocation = (Parameter_BD.PreSet.DBLocation + "pokeimage/" + string.Format("{0:000}", Pokemon.No) + "_0" + ".png");
+			NameLabel.Text = Pokemon.Name;
+			IndividualValue.Text = Pokemon.IndividualValue[0].ToString();
+			foreach (var item in Pokemon.IndividualValue)
+			{
+				IndividualValue.Text += "-" + item;
+			}
+			EffortValue.Text = Pokemon.EffortValue[0].ToString();
+			foreach (var item in Pokemon.EffortValue)
+			{
+				EffortValue.Text += "-" + item;
+			}
+			label6.Text = Pokemon.Weapon[0];
+			label7.Text = Pokemon.Weapon[1];
+			label8.Text = Pokemon.Weapon[2];
+			label9.Text = Pokemon.Weapon[3];
+			Tokusei.Text = Pokemon.Ability;
+			Item.Text = Pokemon.Item;
+			FormSelectInMainFormTab.Items.Clear();
+			if (Pokemon.anotherform == null)
+			{
+				FormSelectInMainFormTab.Items.Add("N/A");
+				FormSelectInMainFormTab.Enabled = false;
+			}
+			else foreach (var item in Pokemon.anotherform)
+			{
+				FormSelectInMainFormTab.Items.Add(item.Name);
+				FormSelectInMainFormTab.Enabled = true;
+			}
+		}
+
 		private void AutoCompleteSet(TextBox obj, string[] strs)
 		{
 			var sAutoList = new AutoCompleteStringCollection();
@@ -43,18 +84,18 @@ namespace PokemonManager
 
 			isDialogue(false);
 			var temp = new string[6]
-			{       "なし",
-				"いのちのたま",
-				"こだわりスカーフ",
-				"こだわりめがね",
-				"じゃくてんほけん",
-				"とつげきちょっき"
-			};
+				{       "なし",
+					"いのちのたま",
+					"こだわりスカーフ",
+					"こだわりめがね",
+					"じゃくてんほけん",
+					"とつげきちょっき"
+				};
 			foreach (var item in temp)
 			{
 				SelectItemList.Items.Add(item);
 			}
-			Height += 40;
+			Height += 50;
 		}
 
 		private void tabPage1_Click(object sender, EventArgs e)
@@ -82,8 +123,10 @@ namespace PokemonManager
 		}
 		private void SelectButton_Click(object sender, EventArgs e)
 		{
-			if (selectform.isExist == false)
+			if (selectform == null)
 			{
+				selectform = new SelectForm();
+				selectform.FormClosed += Selectform_FormClosed;
 				selectform.Show();
 			}
 			else
@@ -113,5 +156,6 @@ namespace PokemonManager
 			System.Diagnostics.Process.Start("https://twitter.com/fill_u87gyc");
 
 		}
+
 	}
 }

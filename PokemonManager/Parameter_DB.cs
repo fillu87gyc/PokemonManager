@@ -26,9 +26,6 @@
 	[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
 	public class Pokemon
 	{
-		/// <param name="Number"></param>
-		/// <param name="Workbook"></param>
-		/// <param name="FormNum">何段階目かを書く 0が通常状態</param>
 		public Pokemon(int Number, int FormNum)
 		{
 			Param = new int[6] { 0, 0, 0, 0, 0, 0 };

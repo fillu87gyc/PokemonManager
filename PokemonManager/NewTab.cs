@@ -118,11 +118,13 @@ namespace PokemonManager
 			if (TempPokemon.Set(EffortValues, IndividualValues))
 			{
 				ch.Effect(ref TempPokemon.Statistics);
-				Items.Effect(ref TempPokemon.Statistics);
+				var temp4 = TempPokemon.Statistics;
 
-				string temp3 = TempPokemon.Statistics[0].ToString();
+				Items.Effect(ref temp4);
+
+				string temp3 = temp4[0].ToString();
 				for (int i = 1; i < 6; i++)
-					temp3 += "-" + TempPokemon.Statistics[i].ToString();
+					temp3 += "-" + temp4[i].ToString();
 
 				RealVal_newForm.Text = temp3;
 			}
@@ -174,31 +176,48 @@ namespace PokemonManager
 			var book = new ClosedXML.Excel.XLWorkbook(Parameter_BD.PreSet.DBLocation + "SaveData.xlsx");
 			int next = 1;
 			while (book.Worksheet(1).Cell(next, 1).Value.ToString() != "") next++;
-			SaveSequence(book.Worksheet(1), next);
-			book.Save();
+			if (SaveSequence(book.Worksheet(1), next))
+			{
+				book.Save();
 
-			//Init
-			isDialogue(false);
-			isDialogue(true);
-			InputName.Text = "";
+				//Init
+				isDialogue(false);
+				isDialogue(true);
+				InputName.Text = "";
+			}
+
 		}
-		void SaveSequence(ClosedXML.Excel.IXLWorksheet sheet, int row)
+		bool SaveSequence(ClosedXML.Excel.IXLWorksheet sheet, int row)
 		{
 			sheet.Cell(row, 1).Value = TempPokemon.No;
 			sheet.Cell(row, 2).Value = TempPokemon.Name;
 			sheet.Cell(row, 3).Value = TempPokemon.Character;
 			sheet.Cell(row, 4).Value = TempPokemon.Item;
 			sheet.Cell(row, 5).Value = TempPokemon.Ability;
-			for (int i = 0; i < 4; i++)
-			{
-				sheet.Cell(row, i + 6).Value = TempPokemon.Weapon[i];
-			}
+
 			for (int i = 0; i < 6; i++)
 			{
 				sheet.Cell(row, i + 10).Value = TempPokemon.EffortValue[i];
 				sheet.Cell(row, i + 16).Value = TempPokemon.IndividualValue[i];
 				sheet.Cell(row, i + 22).Value = TempPokemon.Statistics[i];
 			}
+			for (int i = 0; i < 4; i++)
+			{
+				try
+				{
+					sheet.Cell(row, i + 6).Value = TempPokemon.Weapon[i];
+				}
+				catch (IndexOutOfRangeException)
+				{
+					System.Windows.Forms.MessageBox.Show("ワザの入力が正しくありません");
+					for (int j = 1; j <= 27; j++)
+					{
+						sheet.Cell(row, j).Value = "";
+					}
+					return false;
+				}
+			}
+			return true;
 		}
 	}
 }

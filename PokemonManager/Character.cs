@@ -34,7 +34,7 @@ namespace Parameter_BD
 		{
 			for (int i = 1; i < 6; i++)
 			{
-				st[i] = (int)(st[i] * chEffect[No, i - 1]);
+				st[i] = (int)(st[i] * chEffect[No - 1, i - 1]);
 			}
 		}
 		XLWorkbook Workbook = new XLWorkbook(PreSet.DBLocation + "Character.xlsx");

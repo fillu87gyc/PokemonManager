@@ -84,7 +84,7 @@
 			this.listView1.FullRowSelect = true;
 			this.listView1.Location = new System.Drawing.Point(10, 15);
 			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(1287, 409);
+			this.listView1.Size = new System.Drawing.Size(1277, 409);
 			this.listView1.TabIndex = 4;
 			this.listView1.UseCompatibleStateImageBehavior = false;
 			this.listView1.UseWaitCursor = true;
@@ -94,7 +94,7 @@
 			// No
 			// 
 			this.No.Text = "No";
-			this.No.Width = 52;
+			this.No.Width = 50;
 			// 
 			// Names
 			// 
@@ -145,7 +145,6 @@
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.ListView listView1;
 		private System.Windows.Forms.ColumnHeader No;
 		private System.Windows.Forms.ColumnHeader Names;
 		private System.Windows.Forms.ColumnHeader Character;
@@ -154,5 +153,7 @@
 		private System.Windows.Forms.ColumnHeader EffortValue;
 		private System.Windows.Forms.ColumnHeader IndividualValue;
 		public bool isExist = false;
+		public int SelectRow = 1;
+		private System.Windows.Forms.ListView listView1;
 	}
 }

@@ -908,6 +908,6 @@
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.Label label19;
 		private System.Windows.Forms.GroupBox groupBox3;
-		SelectForm selectform = new SelectForm();
+		SelectForm selectform;
 	}
 }

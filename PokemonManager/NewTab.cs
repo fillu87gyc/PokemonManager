@@ -33,12 +33,22 @@ namespace PokemonManager
 				ShowImg_newForm.ImageLocation = (Parameter_BD.PreSet.DBLocation + "pokeimage/" + String.Format("{0:000}", No) + "_0" + ".png");
 				TempPokemon.GetChangeData();
 				MegaSwitch.Enabled = TempPokemon.MegaAble;
+				InputForm.Items.Clear();
 				if (TempPokemon.ChangeAble)
-				{
+				{					
+					InputForm.Text = "デフォルト";
+					InputForm.Items.Add("デフォルト");
 					foreach (var item in TempPokemon.anotherform)
 					{
 						InputForm.Items.Add(item.Name);
 					}
+					InputForm.Enabled = true;
+				}
+				else
+				{
+					InputForm.Text = "N/A";
+					InputForm.Items.Add("N/A");
+					InputForm.Enabled = false;
 				}
 				InputForm.Enabled = (TempPokemon.ChangeAble);
 				No2Name.Enabled = true;
@@ -118,7 +128,11 @@ namespace PokemonManager
 			if (TempPokemon.Set(EffortValues, IndividualValues))
 			{
 				ch.Effect(ref TempPokemon.Statistics);
-				var temp4 = TempPokemon.Statistics;
+				int[] temp4 = new int[6];
+				for (int i  = 0; i  <TempPokemon.Statistics.Length; i ++)
+				{
+					temp4[i] = TempPokemon.Statistics[i];
+				}
 
 				Items.Effect(ref temp4);
 

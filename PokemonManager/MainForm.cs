@@ -157,5 +157,9 @@ namespace PokemonManager
 
 		}
 
+		private void ShowImg_newForm_Click(object sender, EventArgs e)
+		{
+			int a = 0;
+		}
 	}
 }

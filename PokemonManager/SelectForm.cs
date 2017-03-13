@@ -44,19 +44,33 @@ namespace PokemonManager
 		}
 		private void SelectForm_Load(object sender, EventArgs e)
 		{
-			Width = 900;
+			Width = 940;
 			isExist = true;
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			int idx = 0;
-			if (listView1.SelectedItems.Count > 0)
+			if (ViewCelected)
 			{
-				idx = listView1.SelectedItems[0].Index;
+				int idx = 0;
+				if (listView1.SelectedItems.Count > 0)
+				{
+					idx = listView1.SelectedItems[0].Index;
+				}
+				SelectRow = idx;
+				Close();
+				return;
 			}
-			SelectRow = idx;
-			Close();
+			else
+			{
+				SelectRow = -1;
+				MessageBox.Show("何も選択されませんでした",
+					"警告",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Warning);
+				Close();
+			}
+
 		}
 
 		private void button2_Click(object sender, EventArgs e)
@@ -68,6 +82,12 @@ namespace PokemonManager
 		{
 
 		}
+		private void button4_Click(object sender, EventArgs e)
+		{
+			isExist = false;
+			SelectRow = -1;
+			Close();
+		}
 
 		private void SelectForm_Closed(object sender, EventArgs e)
 		{
@@ -76,7 +96,8 @@ namespace PokemonManager
 
 		private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
 		{
-
+			ViewCelected = true;
 		}
 	}
 }
+

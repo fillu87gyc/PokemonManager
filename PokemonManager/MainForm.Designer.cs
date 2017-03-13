@@ -34,9 +34,11 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.Char_MainForm = new System.Windows.Forms.Label();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.Tokusei = new System.Windows.Forms.Label();
 			this.SelectButton = new System.Windows.Forms.Button();
-			this.Item = new System.Windows.Forms.Label();
+			this.ItemLabel = new System.Windows.Forms.Label();
 			this.EffortValue = new System.Windows.Forms.Label();
 			this.IndividualValue = new System.Windows.Forms.Label();
 			this.notUse_item = new System.Windows.Forms.RadioButton();
@@ -111,7 +113,7 @@
 			this.tabPage2.Controls.Add(this.label2);
 			this.tabPage2.Location = new System.Drawing.Point(10, 46);
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage2.Size = new System.Drawing.Size(1338, 798);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "素早さ判定";
@@ -141,9 +143,11 @@
 			// tabPage1
 			// 
 			this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+			this.tabPage1.Controls.Add(this.Char_MainForm);
+			this.tabPage1.Controls.Add(this.checkBox1);
 			this.tabPage1.Controls.Add(this.Tokusei);
 			this.tabPage1.Controls.Add(this.SelectButton);
-			this.tabPage1.Controls.Add(this.Item);
+			this.tabPage1.Controls.Add(this.ItemLabel);
 			this.tabPage1.Controls.Add(this.EffortValue);
 			this.tabPage1.Controls.Add(this.IndividualValue);
 			this.tabPage1.Controls.Add(this.notUse_item);
@@ -158,16 +162,37 @@
 			this.tabPage1.Controls.Add(this.label1);
 			this.tabPage1.Location = new System.Drawing.Point(10, 46);
 			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage1.Size = new System.Drawing.Size(1338, 798);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "メインフォーム";
 			this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
 			// 
+			// Char_MainForm
+			// 
+			this.Char_MainForm.AutoSize = true;
+			this.Char_MainForm.Location = new System.Drawing.Point(918, 39);
+			this.Char_MainForm.Name = "Char_MainForm";
+			this.Char_MainForm.Size = new System.Drawing.Size(0, 27);
+			this.Char_MainForm.TabIndex = 17;
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Enabled = false;
+			this.checkBox1.Location = new System.Drawing.Point(918, 233);
+			this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(146, 31);
+			this.checkBox1.TabIndex = 16;
+			this.checkBox1.Text = "メガシンカ";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+			// 
 			// Tokusei
 			// 
 			this.Tokusei.AutoSize = true;
-			this.Tokusei.Location = new System.Drawing.Point(830, 210);
+			this.Tokusei.Location = new System.Drawing.Point(913, 177);
 			this.Tokusei.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.Tokusei.Name = "Tokusei";
 			this.Tokusei.Size = new System.Drawing.Size(66, 27);
@@ -176,7 +201,8 @@
 			// 
 			// SelectButton
 			// 
-			this.SelectButton.Location = new System.Drawing.Point(1153, 672);
+			this.SelectButton.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+			this.SelectButton.Location = new System.Drawing.Point(1173, 681);
 			this.SelectButton.Name = "SelectButton";
 			this.SelectButton.Size = new System.Drawing.Size(159, 111);
 			this.SelectButton.TabIndex = 3;
@@ -184,14 +210,14 @@
 			this.SelectButton.UseVisualStyleBackColor = true;
 			this.SelectButton.Click += new System.EventHandler(this.SelectButton_Click);
 			// 
-			// Item
+			// ItemLabel
 			// 
-			this.Item.AutoSize = true;
-			this.Item.Location = new System.Drawing.Point(55, 649);
-			this.Item.Name = "Item";
-			this.Item.Size = new System.Drawing.Size(61, 27);
-			this.Item.TabIndex = 13;
-			this.Item.Text = "item";
+			this.ItemLabel.AutoSize = true;
+			this.ItemLabel.Location = new System.Drawing.Point(55, 649);
+			this.ItemLabel.Name = "ItemLabel";
+			this.ItemLabel.Size = new System.Drawing.Size(0, 27);
+			this.ItemLabel.TabIndex = 13;
+			this.ItemLabel.Click += new System.EventHandler(this.Item_Click);
 			// 
 			// EffortValue
 			// 
@@ -199,9 +225,8 @@
 			this.EffortValue.Font = new System.Drawing.Font("MS UI Gothic", 12F);
 			this.EffortValue.Location = new System.Drawing.Point(55, 514);
 			this.EffortValue.Name = "EffortValue";
-			this.EffortValue.Size = new System.Drawing.Size(429, 36);
+			this.EffortValue.Size = new System.Drawing.Size(0, 36);
 			this.EffortValue.TabIndex = 12;
-			this.EffortValue.Text = "000-000-000-000-000-000";
 			// 
 			// IndividualValue
 			// 
@@ -209,9 +234,8 @@
 			this.IndividualValue.Font = new System.Drawing.Font("MS UI Gothic", 12F);
 			this.IndividualValue.Location = new System.Drawing.Point(51, 363);
 			this.IndividualValue.Name = "IndividualValue";
-			this.IndividualValue.Size = new System.Drawing.Size(321, 36);
+			this.IndividualValue.Size = new System.Drawing.Size(0, 36);
 			this.IndividualValue.TabIndex = 11;
-			this.IndividualValue.Text = "31-31-31-31-31-31";
 			this.IndividualValue.Click += new System.EventHandler(this.label17_Click);
 			// 
 			// notUse_item
@@ -224,6 +248,7 @@
 			this.notUse_item.TabStop = true;
 			this.notUse_item.Text = "使用しない";
 			this.notUse_item.UseVisualStyleBackColor = true;
+			this.notUse_item.CheckedChanged += new System.EventHandler(this.notUse_item_CheckedChanged);
 			// 
 			// Weapon
 			// 
@@ -241,49 +266,49 @@
 			// Weapon4
 			// 
 			this.Weapon4.AutoSize = true;
+			this.Weapon4.Font = new System.Drawing.Font("MS UI Gothic", 12F);
 			this.Weapon4.Location = new System.Drawing.Point(369, 224);
 			this.Weapon4.Name = "Weapon4";
-			this.Weapon4.Size = new System.Drawing.Size(78, 27);
+			this.Weapon4.Size = new System.Drawing.Size(0, 36);
 			this.Weapon4.TabIndex = 3;
-			this.Weapon4.Text = "label9";
 			// 
 			// Weapon3
 			// 
 			this.Weapon3.AutoSize = true;
+			this.Weapon3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.Weapon3.Location = new System.Drawing.Point(369, 55);
 			this.Weapon3.Name = "Weapon3";
-			this.Weapon3.Size = new System.Drawing.Size(78, 27);
+			this.Weapon3.Size = new System.Drawing.Size(0, 36);
 			this.Weapon3.TabIndex = 2;
-			this.Weapon3.Text = "label8";
 			this.Weapon3.Click += new System.EventHandler(this.label8_Click);
 			// 
 			// Weapon2
 			// 
 			this.Weapon2.AutoSize = true;
+			this.Weapon2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.Weapon2.Location = new System.Drawing.Point(41, 224);
 			this.Weapon2.Name = "Weapon2";
-			this.Weapon2.Size = new System.Drawing.Size(78, 27);
+			this.Weapon2.Size = new System.Drawing.Size(0, 36);
 			this.Weapon2.TabIndex = 1;
-			this.Weapon2.Text = "label7";
 			// 
 			// Weapon1
 			// 
 			this.Weapon1.AutoSize = true;
+			this.Weapon1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.Weapon1.Location = new System.Drawing.Point(41, 55);
 			this.Weapon1.Name = "Weapon1";
-			this.Weapon1.Size = new System.Drawing.Size(78, 27);
+			this.Weapon1.Size = new System.Drawing.Size(0, 36);
 			this.Weapon1.TabIndex = 0;
-			this.Weapon1.Text = "label6";
 			// 
 			// RealValue
 			// 
 			this.RealValue.AutoSize = true;
-			this.RealValue.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-			this.RealValue.Location = new System.Drawing.Point(519, 706);
+			this.RealValue.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.RealValue.Location = new System.Drawing.Point(518, 692);
 			this.RealValue.Name = "RealValue";
-			this.RealValue.Size = new System.Drawing.Size(411, 36);
+			this.RealValue.Size = new System.Drawing.Size(0, 49);
 			this.RealValue.TabIndex = 8;
-			this.RealValue.Text = "313-311-31-313-131-151";
+			this.RealValue.Click += new System.EventHandler(this.RealValue_Click);
 			// 
 			// label4
 			// 
@@ -305,17 +330,20 @@
 			// 
 			// FormSelectInMainFormTab
 			// 
+			this.FormSelectInMainFormTab.Enabled = false;
 			this.FormSelectInMainFormTab.FormattingEnabled = true;
-			this.FormSelectInMainFormTab.Location = new System.Drawing.Point(830, 103);
+			this.FormSelectInMainFormTab.Location = new System.Drawing.Point(918, 100);
 			this.FormSelectInMainFormTab.Name = "FormSelectInMainFormTab";
 			this.FormSelectInMainFormTab.Size = new System.Drawing.Size(246, 35);
 			this.FormSelectInMainFormTab.TabIndex = 5;
+			this.FormSelectInMainFormTab.SelectedIndexChanged += new System.EventHandler(this.FormSelectInMainFormTab_SelectedIndexChanged);
 			// 
 			// ShowImg
 			// 
 			this.ShowImg.Location = new System.Drawing.Point(22, 19);
 			this.ShowImg.Name = "ShowImg";
 			this.ShowImg.Size = new System.Drawing.Size(271, 246);
+			this.ShowImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.ShowImg.TabIndex = 4;
 			this.ShowImg.TabStop = false;
 			this.ShowImg.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -323,12 +351,12 @@
 			// NameLabel
 			// 
 			this.NameLabel.AutoSize = true;
-			this.NameLabel.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-			this.NameLabel.Location = new System.Drawing.Point(405, 103);
+			this.NameLabel.Font = new System.Drawing.Font("MS UI Gothic", 32F);
+			this.NameLabel.Location = new System.Drawing.Point(337, 84);
 			this.NameLabel.Name = "NameLabel";
-			this.NameLabel.Size = new System.Drawing.Size(308, 60);
+			this.NameLabel.Size = new System.Drawing.Size(269, 97);
 			this.NameLabel.TabIndex = 3;
-			this.NameLabel.Text = "Name / NN";
+			this.NameLabel.Text = "Name";
 			this.NameLabel.Click += new System.EventHandler(this.label2_Click);
 			// 
 			// Use_item
@@ -341,6 +369,7 @@
 			this.Use_item.TabStop = true;
 			this.Use_item.Text = "使用する";
 			this.Use_item.UseVisualStyleBackColor = true;
+			this.Use_item.CheckedChanged += new System.EventHandler(this.Use_item_CheckedChanged);
 			// 
 			// label1
 			// 
@@ -397,7 +426,7 @@
 			// 
 			this.MegaSwitch.AutoSize = true;
 			this.MegaSwitch.Location = new System.Drawing.Point(825, 229);
-			this.MegaSwitch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.MegaSwitch.Margin = new System.Windows.Forms.Padding(4);
 			this.MegaSwitch.Name = "MegaSwitch";
 			this.MegaSwitch.Size = new System.Drawing.Size(103, 31);
 			this.MegaSwitch.TabIndex = 29;
@@ -435,7 +464,7 @@
             "てれや",
             "まじめ"});
 			this.SeikakuList.Location = new System.Drawing.Point(956, 15);
-			this.SeikakuList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.SeikakuList.Margin = new System.Windows.Forms.Padding(4);
 			this.SeikakuList.Name = "SeikakuList";
 			this.SeikakuList.Size = new System.Drawing.Size(145, 382);
 			this.SeikakuList.TabIndex = 28;
@@ -454,7 +483,7 @@
 			// Tokusei_Set
 			// 
 			this.Tokusei_Set.Location = new System.Drawing.Point(387, 226);
-			this.Tokusei_Set.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Tokusei_Set.Margin = new System.Windows.Forms.Padding(4);
 			this.Tokusei_Set.Name = "Tokusei_Set";
 			this.Tokusei_Set.Size = new System.Drawing.Size(195, 34);
 			this.Tokusei_Set.TabIndex = 23;
@@ -462,9 +491,10 @@
 			// 
 			// SavePokemonData
 			// 
-			this.SavePokemonData.Location = new System.Drawing.Point(1241, 751);
+			this.SavePokemonData.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.SavePokemonData.Location = new System.Drawing.Point(1203, 692);
 			this.SavePokemonData.Name = "SavePokemonData";
-			this.SavePokemonData.Size = new System.Drawing.Size(103, 46);
+			this.SavePokemonData.Size = new System.Drawing.Size(130, 105);
 			this.SavePokemonData.TabIndex = 22;
 			this.SavePokemonData.Text = "Save";
 			this.SavePokemonData.UseVisualStyleBackColor = true;
@@ -484,11 +514,14 @@
 			// label16
 			// 
 			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(685, 372);
+			this.label16.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.label16.ForeColor = System.Drawing.Color.MediumBlue;
+			this.label16.Location = new System.Drawing.Point(638, 368);
 			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(217, 27);
+			this.label16.Size = new System.Drawing.Size(217, 54);
 			this.label16.TabIndex = 20;
-			this.label16.Text = "技の入力(ひらがな)";
+			this.label16.Text = "技の入力(ひらがな)\r\n改行で複数入力";
+			this.label16.Click += new System.EventHandler(this.label16_Click);
 			// 
 			// RealVal_newForm
 			// 
@@ -531,10 +564,10 @@
 			// 
 			// Weapon_Set
 			// 
-			this.Weapon_Set.Location = new System.Drawing.Point(689, 413);
+			this.Weapon_Set.Location = new System.Drawing.Point(643, 441);
 			this.Weapon_Set.Multiline = true;
 			this.Weapon_Set.Name = "Weapon_Set";
-			this.Weapon_Set.Size = new System.Drawing.Size(409, 181);
+			this.Weapon_Set.Size = new System.Drawing.Size(455, 129);
 			this.Weapon_Set.TabIndex = 14;
 			this.Weapon_Set.TextChanged += new System.EventHandler(this.Weapon_Set_TextChanged);
 			// 
@@ -559,20 +592,26 @@
 			// label13
 			// 
 			this.label13.AutoSize = true;
+			this.label13.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.label13.ForeColor = System.Drawing.Color.MediumBlue;
 			this.label13.Location = new System.Drawing.Point(69, 481);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(447, 27);
 			this.label13.TabIndex = 11;
 			this.label13.Text = "努力値 (006-252-000-000-000-252) ";
+			this.label13.Click += new System.EventHandler(this.label13_Click);
 			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
+			this.label12.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.label12.ForeColor = System.Drawing.Color.MediumBlue;
 			this.label12.Location = new System.Drawing.Point(69, 333);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(355, 27);
 			this.label12.TabIndex = 10;
 			this.label12.Text = "個体値 (31-31-31-31-31-31)";
+			this.label12.Click += new System.EventHandler(this.label12_Click);
 			// 
 			// IndividualValue_Set
 			// 
@@ -610,7 +649,7 @@
 			this.ShowImg_newForm.InitialImage = ((System.Drawing.Image)(resources.GetObject("ShowImg_newForm.InitialImage")));
 			this.ShowImg_newForm.Location = new System.Drawing.Point(14, 15);
 			this.ShowImg_newForm.Name = "ShowImg_newForm";
-			this.ShowImg_newForm.Size = new System.Drawing.Size(280, 300);
+			this.ShowImg_newForm.Size = new System.Drawing.Size(301, 300);
 			this.ShowImg_newForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.ShowImg_newForm.TabIndex = 5;
 			this.ShowImg_newForm.TabStop = false;
@@ -627,7 +666,7 @@
 			this.tabPage4.Controls.Add(this.groupBox2);
 			this.tabPage4.Controls.Add(this.groupBox3);
 			this.tabPage4.Location = new System.Drawing.Point(10, 46);
-			this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.Size = new System.Drawing.Size(1338, 798);
 			this.tabPage4.TabIndex = 3;
@@ -693,9 +732,9 @@
 			this.groupBox1.Controls.Add(this.label18);
 			this.groupBox1.Controls.Add(this.label11);
 			this.groupBox1.Location = new System.Drawing.Point(19, 27);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Size = new System.Drawing.Size(871, 215);
 			this.groupBox1.TabIndex = 10;
 			this.groupBox1.TabStop = false;
@@ -705,7 +744,7 @@
 			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
 			this.pictureBox1.Location = new System.Drawing.Point(689, 35);
-			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(154, 165);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -752,9 +791,9 @@
 			// 
 			this.groupBox2.Controls.Add(this.label19);
 			this.groupBox2.Location = new System.Drawing.Point(19, 251);
-			this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
 			this.groupBox2.Size = new System.Drawing.Size(983, 292);
 			this.groupBox2.TabIndex = 11;
 			this.groupBox2.TabStop = false;
@@ -773,9 +812,9 @@
 			// 
 			this.groupBox3.Controls.Add(this.label6);
 			this.groupBox3.Location = new System.Drawing.Point(19, 544);
-			this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
 			this.groupBox3.Size = new System.Drawing.Size(1199, 243);
 			this.groupBox3.TabIndex = 10;
 			this.groupBox3.TabStop = false;
@@ -864,13 +903,14 @@
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.TextBox InputName;
 		private System.Windows.Forms.PictureBox ShowImg_newForm;
-		private System.Windows.Forms.Label Item;
+		private System.Windows.Forms.Label ItemLabel;
 		private System.Windows.Forms.Label EffortValue;
 		private System.Windows.Forms.Button SavePokemonData;
 		private System.Windows.Forms.Label Tokusei;
 		private System.Windows.Forms.TextBox Tokusei_Set;
 		private System.Windows.Forms.Label Tokusei_const;
 		private Tab1_autoConp.Names Names;
+		Parameter_BD.Derivation.CompletionPokemon Pokemon_MainForm;//= new Parameter_BD.Derivation.CompletionPokemon(selectform.SelectRow + 1);
 		private Parameter_BD.ItemDB.Item Items;
 		private Parameter_BD.Derivation.TempPokemon TempPokemon;
 		private Parameter_BD.Character ch;
@@ -895,5 +935,7 @@
 		private System.Windows.Forms.Label label19;
 		private System.Windows.Forms.GroupBox groupBox3;
 		SelectForm selectform;
+		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.Label Char_MainForm;
 	}
 }

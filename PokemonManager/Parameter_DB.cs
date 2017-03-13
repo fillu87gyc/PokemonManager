@@ -67,6 +67,9 @@
 		public Pokemon[] anotherform;
 		public int No;
 		public string Name;
+		/// <summary>
+		/// 種族値です
+		/// </summary>
 		public int[] Param;
 		public int ChangeCount;
 		public bool ChangeAble;
@@ -131,22 +134,28 @@ namespace Parameter_BD.Derivation
 		public CompletionPokemon(int row) : base(1, 0)
 		{
 			//ここはExcelシートから読み取る部分
-			No =  int.Parse(book.Worksheet(1).Cell(row, 1).Value.ToString());	
-			Name =		book.Worksheet(1).Cell(row, 2).Value.ToString();
-			Character =	book.Worksheet(1).Cell(row, 3).Value.ToString();
-			Item =		book.Worksheet(1).Cell(row, 4).Value.ToString();
-			Ability =	book.Worksheet(1).Cell(row, 5).Value.ToString();
+			No = int.Parse(book.Worksheet(1).Cell(row, 1).Value.ToString());
+			Name = book.Worksheet(1).Cell(row, 2).Value.ToString();
+			Character = book.Worksheet(1).Cell(row, 3).Value.ToString();
+			Item = book.Worksheet(1).Cell(row, 4).Value.ToString();
+			Ability = book.Worksheet(1).Cell(row, 5).Value.ToString();
 			for (int i = 0; i < Weapon.Length; i++)
 			{
 				Weapon[i] = book.Worksheet(1).Cell(row, i + 6).Value.ToString();
 			}
 			for (int i = 0; i < 6; i++)
 			{
-				EffortValue[i] =	int.Parse(book.Worksheet(1).Cell(row, i + 10).Value.ToString());
-				IndividualValue[i] =	int.Parse(book.Worksheet(1).Cell(row, i + 16).Value.ToString());
-				Statistics[i] =		int.Parse(book.Worksheet(1).Cell(row, i + 22).Value.ToString());
+				EffortValue[i] = int.Parse(book.Worksheet(1).Cell(row, i + 10).Value.ToString());
+				IndividualValue[i] = int.Parse(book.Worksheet(1).Cell(row, i + 16).Value.ToString());
+				Statistics[i] = int.Parse(book.Worksheet(1).Cell(row, i + 22).Value.ToString());
 			}
-
+			var val = new Pokemon(No, 0);
+			val.GetChangeData();
+			Param = val.Param;
+			ChangeCount = val.ChangeCount;
+			ChangeAble = val.ChangeAble;
+			MegaAble = val.MegaAble;
+			anotherform = val.anotherform;
 		}
 		ClosedXML.Excel.XLWorkbook book = new ClosedXML.Excel.XLWorkbook(PreSet.DBLocation + "SaveData.xlsx");
 	}

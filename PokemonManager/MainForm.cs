@@ -20,7 +20,7 @@ namespace PokemonManager
 			Items = new Parameter_BD.ItemDB.Item();
 			ch = new Parameter_BD.Character();
 						
-			FormSelectInMainFormTab.DropDownStyle = ComboBoxStyle.DropDownList; InitializeComponent();
+			FormSelectInMainFormTab.DropDownStyle = ComboBoxStyle.DropDownList;
 			InputForm.DropDownStyle = ComboBoxStyle.DropDownList;
 			
 		}
@@ -102,7 +102,7 @@ namespace PokemonManager
 			}
 		}
 
-		private void AutoCompleteSet(ref TextBox obj, string[] strs)
+		private void AutoCompleteSet(TextBox obj, string[] strs)
 		{
 			var sAutoList = new AutoCompleteStringCollection();
 			obj.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -118,8 +118,8 @@ namespace PokemonManager
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			ShowImg.ImageLocation = Parameter_BD.PreSet.DBLocation + "system/noimage.png";
-			AutoCompleteSet(ref InputName, Names.Data());
-			AutoCompleteSet(ref OtherItem_Set, Items.GetList());
+			AutoCompleteSet(InputName, Names.Data());
+			AutoCompleteSet(OtherItem_Set, Items.GetList());
 
 			ShowImg_newForm.ImageLocation = (Parameter_BD.PreSet.DBLocation + "system/noimage.png");
 			ShowImg_newForm.Show();

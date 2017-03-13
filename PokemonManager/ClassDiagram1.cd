@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Parameter_BD.PreSet" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAACAAAAAAAAAEAAAIAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Parameter_DB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parameter_BD.Pokemon">
+    <Position X="3.25" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAwIAAAAAAAAAABAAAAQAACBIAAAIAAABAAAAAAA=</HashCode>
+      <FileName>Parameter_DB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parameter_BD.Derivation.TempPokemon">
+    <Position X="0.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIABiAEAAAAAAAEAAAAAAgAAAAAAAAACAE=</HashCode>
+      <FileName>Parameter_DB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parameter_BD.Derivation.CompletionPokemon">
+    <Position X="0.5" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parameter_DB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Yu Gothic UI" Size="9" />
+</ClassDiagram>

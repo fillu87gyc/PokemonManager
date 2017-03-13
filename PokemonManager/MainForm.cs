@@ -318,5 +318,10 @@ MessageBoxButtons.OK);
 				RealValue.Text +="-"+ Pokemon_MainForm.Statistics[i];
 			}
 		}
+
+		private void label19_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

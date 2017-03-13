@@ -735,7 +735,7 @@
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-			this.groupBox1.Size = new System.Drawing.Size(871, 215);
+			this.groupBox1.Size = new System.Drawing.Size(1315, 215);
 			this.groupBox1.TabIndex = 10;
 			this.groupBox1.TabStop = false;
 			// 
@@ -743,7 +743,7 @@
 			// 
 			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(689, 35);
+			this.pictureBox1.Location = new System.Drawing.Point(1120, 51);
 			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(154, 165);
@@ -768,7 +768,7 @@
 			this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.label18.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
-			this.label18.Location = new System.Drawing.Point(529, 139);
+			this.label18.Location = new System.Drawing.Point(970, 178);
 			this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(142, 33);
@@ -794,19 +794,21 @@
 			this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-			this.groupBox2.Size = new System.Drawing.Size(983, 292);
+			this.groupBox2.Size = new System.Drawing.Size(1315, 292);
 			this.groupBox2.TabIndex = 11;
 			this.groupBox2.TabStop = false;
 			// 
 			// label19
 			// 
 			this.label19.AutoSize = true;
-			this.label19.Location = new System.Drawing.Point(24, 51);
+			this.label19.Location = new System.Drawing.Point(24, 31);
 			this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(903, 189);
+			this.label19.Size = new System.Drawing.Size(1041, 189);
 			this.label19.TabIndex = 9;
-			this.label19.Text = "githubもありますが更新履歴\r\n\r\n\r\n\r\n\r\n\r\n\'17/03/1 ver 0.01登録画面の大筋が完了(メガ進化 フォルム画像差し替え未対応)";
+			this.label19.Text = "githubもありますが更新履歴\r\n\r\n\r\n\r\n\r\n\'17/03/13 ver 0.1.1 メインフォームがだいたい完成(画像差し替え メガ時のパラメータ変更未対" +
+    "応)\r\n\'17/03/1   ver 0.1.0   登録画面の大筋が完了(メガ進化 フォルム画像差し替え未対応)";
+			this.label19.Click += new System.EventHandler(this.label19_Click);
 			// 
 			// groupBox3
 			// 
@@ -815,7 +817,7 @@
 			this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-			this.groupBox3.Size = new System.Drawing.Size(1199, 243);
+			this.groupBox3.Size = new System.Drawing.Size(1315, 243);
 			this.groupBox3.TabIndex = 10;
 			this.groupBox3.TabStop = false;
 			// 
